@@ -1,4 +1,5 @@
 
+import type { Metadata } from "next";
 import {
   BriefcaseBusiness,
   Code2,
@@ -16,6 +17,17 @@ import {
   IconCard,
   SectionHeading,
 } from "@/components/site";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Start a conversation with Digital Chautari about your next project, product idea, or digital challenge.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact",
+    description: "Start a conversation with Digital Chautari about your next project, product idea, or digital challenge.",
+    url: "/contact",
+  },
+};
 
 const directLines = [
   {

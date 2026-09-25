@@ -1,5 +1,17 @@
 
+import type { Metadata } from "next";
 import { Action, DarkBanner, Hero, ProductSwitcher } from "@/components/site";
+
+export const metadata: Metadata = {
+  title: "Products",
+  description: "Discover Digital Chautari's ventures across creative marketing, content production, and accessible health technology.",
+  alternates: { canonical: "/products" },
+  openGraph: {
+    title: "Products",
+    description: "Discover Digital Chautari's ventures across creative marketing, content production, and accessible health technology.",
+    url: "/products",
+  },
+};
 
 export default function Products() {
   return (

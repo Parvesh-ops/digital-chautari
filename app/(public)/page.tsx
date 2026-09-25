@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { ClosingCta } from "@/components/site";
 import { AboutSection } from "@/src/app-pages/(public)/AboutSection";
 import { BlogSection } from "@/src/app-pages/(public)/BlogSection";
@@ -8,6 +9,17 @@ import { ProductsSection } from "@/src/app-pages/(public)/ProductsSection";
 import { TestimonialsSection } from "@/src/app-pages/(public)/TestimonialsSection";
 import { SectorsSection } from "@/src/app-pages/(public)/SectorsSection";
 import { ProcessSection } from "@/src/app-pages/(public)/ProcessSection";
+
+export const metadata: Metadata = {
+  title: "Ideas into impact",
+  description: "Digital Chautari brings together strategy, design, technology, and storytelling to build meaningful digital experiences.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Ideas into impact",
+    description: "Digital Chautari brings together strategy, design, technology, and storytelling to build meaningful digital experiences.",
+    url: "/",
+  },
+};
 
 export default function Home() {
   return (

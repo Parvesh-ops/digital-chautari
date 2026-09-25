@@ -1,6 +1,25 @@
+import type { Metadata } from "next";
 import { ArrowRight, Briefcase, Compass, Handshake, Heart, Lightbulb, ShieldCheck, Sparkles, Star, Target, Users } from "lucide-react";
 import { Action, Hero, SectionHeading } from "@/components/site";
-import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "About us",
+  description: "Meet the people, principles, and purpose behind Digital Chautari, a growing digital company rooted in Kathmandu.",
+  keywords: [
+    "Digital Chautari",
+    "About Digital Chautari",
+    "digital company Nepal",
+    "technology company Kathmandu",
+    "digital products Nepal",
+    "digital solutions Nepal",
+  ],
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About us",
+    description: "Meet the people, principles, and purpose behind Digital Chautari, a growing digital company rooted in Kathmandu.",
+    url: "/about",
+  },
+};
 
 const storyStats = [
   { value: "2025", label: "Founded", tone: "teal" },

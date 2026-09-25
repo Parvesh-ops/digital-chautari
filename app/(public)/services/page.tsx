@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Action,
   Checklist,
@@ -9,6 +10,17 @@ import {
 } from "@/components/site";
 import { Benefits, Industries, PricingPlans, ServiceRows } from "@/src/constants/Services";
 import { Sparkles } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description: "Explore Digital Chautari's digital marketing, content, branding, design, and software development services.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services",
+    description: "Explore Digital Chautari's digital marketing, content, branding, design, and software development services.",
+    url: "/services",
+  },
+};
 
 export default function Services() {
   return (
