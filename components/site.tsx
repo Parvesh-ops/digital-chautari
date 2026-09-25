@@ -194,10 +194,13 @@ export function ClosingCta({
       <div className="site-container">
         <div className="closing-cta">
           <Sparkles size={28} />
+
           <h2>{title}</h2>
+
           <p>{text}</p>
+
           <Action href="/contact" variant="light">
-            Start a project
+            Book a Consultation
           </Action>
         </div>
       </div>

@@ -89,3 +89,4 @@ export const blogPosts = [
     gradient: "linear-gradient(135deg,#244c6a,#9bc9c6)",
   },
 ];
+

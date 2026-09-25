@@ -1,16 +1,204 @@
-import { BarChart3, Code2, Megaphone, Palette, Search, Share2, Smartphone, Target } from "lucide-react";
-import { Action, Checklist, ClosingCta, DarkBanner, Hero, IconCard, SectionHeading } from "@/components/site";
+import {
+  Action,
+  Checklist,
+  ClosingCta,
+  DarkBanner,
+  Hero,
+  IconCard,
+  SectionHeading,
+} from "@/components/site";
+import { Benefits, Industries, PricingPlans, ServiceRows } from "@/src/constants/Services";
 
-const serviceRows = [[Megaphone, "Digital marketing", "Turn attention into traction with a strategy that connects every channel.", ["SEO & SEM", "Social media marketing", "Paid advertising", "Analytics & reporting"]], [Palette, "Content creation", "Create a visual language and content engine your audience wants to return to.", ["Video production", "Photography", "Copywriting", "Creative direction"]], [Code2, "Software development", "Design and develop digital products that are useful, scalable, and built to last.", ["Web applications", "Mobile experiences", "Health-tech platforms", "Maintenance & support"]]] as const;
-const industries = ["Healthcare", "E-Commerce", "Real Estate", "Education", "Tourism", "Media"];
+export default function Services() {
+  return (
+    <>
+      {/* Hero Section */}
+      <Hero
+        eyebrow="What we do"
+        title="Services that drive growth"
+        description="The right blend of creative thinking, digital craft, and technical depth to help your next chapter take shape."
+      >
+        <div className="hero-actions">
+          <Action href="/contact">Book a consultation</Action>
 
-export default function Services() { return <>
-  <Hero eyebrow="What we do" title="Services that drive growth" description="The right blend of creative thinking, digital craft, and technical depth to help your next chapter take shape."><div className="hero-actions"><Action href="/contact">Book a consultation</Action><Action href="#services" variant="ghost">Explore services</Action></div></Hero>
-  <section className="section" id="services"><div className="site-container"><SectionHeading eyebrow="Our capabilities" title="One team, the full picture." description="Choose a starting point or bring us a challenge that needs a little of everything."/>{serviceRows.map(([Icon, title, text, subs]) => <div className="service-row" key={title}><div><div className="icon-chip chip-teal"><Icon size={22} /></div><h3>{title}</h3><p>{text}</p></div><div className="subservice-grid">{subs.map((sub, i) => <div className="subservice" key={sub}><strong>{sub}</strong><p>{["Be found by the people looking for you.", "Build a community around your point of view.", "Spend smarter and learn faster.", "Know what is working and why."][i] || "A thoughtful, flexible foundation for your goals."}</p></div>)}</div></div>)}</div></section>
-  <section className="section" style={{ background: "#f1f3f1" }}><div className="site-container"><SectionHeading eyebrow="Simple pricing" title="A clear place to start." description="Every engagement begins with a conversation. These packages help frame the right level of support."/><div className="grid-3"><article className="card pricing-card"><h3>Starter</h3><div className="price">Rs 15,000<small>/mo</small></div><p style={{ color: "#5b6472" }}>For early-stage teams building a strong foundation.</p><Checklist items={["Monthly strategy session", "Social media direction", "Performance snapshot", "Email support"]}/><Action href="/contact" variant="ghost">Choose starter</Action></article><article className="card pricing-card dark-pricing"><span className="popular">Most popular</span><h3>Professional</h3><div className="price">Rs 45,000<small>/mo</small></div><p style={{ color: "#b5c0c5" }}>For growing teams ready to make a bigger move.</p><Checklist items={["Full-funnel strategy", "Content production", "Campaign management", "Monthly reporting"]}/><Action href="/contact">Choose professional</Action></article><article className="card pricing-card"><h3>Enterprise</h3><div className="price">Custom</div><p style={{ color: "#5b6472" }}>For ambitious organizations with complex needs.</p><Checklist items={["Dedicated project team", "Multi-channel programs", "Product engineering", "Priority support"]}/><Action href="/contact" variant="ghost">Talk to us</Action></article></div></div></section>
-  <section className="section"><div className="site-container"><SectionHeading eyebrow="Who we work with" title="Built for people doing meaningful work."/><div className="grid-3">{industries.map((item, i) => <IconCard key={item} icon={[<HeartIcon />, <Share2 size={20} />, <Target size={20} />, <Search size={20} />, <Smartphone size={20} />, <BarChart3 size={20} />][i]} title={item} tone={["mint", "teal", "gold", "lilac", "pink", "mint"][i]} />)}</div></div></section>
-  <DarkBanner eyebrow="Why Digital Chautari" title="A partner who stays in the room." text="Good work needs trust, transparency, and the flexibility to respond to what we learn." ><div className="grid-3" style={{ marginTop: 32 }}>{["Dedicated project manager", "Agile development cycle", "Transparent pricing", "Post-launch support", "Scalable architecture", "Cross-platform expertise"].map((item) => <div className="dark-card" key={item}><CheckMark />{item}</div>)}</div></DarkBanner>
-  <ClosingCta title="Let’s find the right service for you." text="Tell us where you are and where you want to go. We’ll help you find the first useful step." />
-</> }
-function CheckMark() { return <span style={{ display: "inline-grid", placeItems: "center", width: 25, height: 25, borderRadius: "50%", background: "#e0a930", color: "#0b1220", marginRight: 10 }}>✓</span>; }
-function HeartIcon() { return <span>♡</span>; }
+          <Action href="#services" variant="ghost">
+            Explore services
+          </Action>
+        </div>
+      </Hero>
+
+      {/* Services Section */}
+      <section className="section" id="services">
+        <div className="site-container">
+          <SectionHeading
+            eyebrow="Our capabilities"
+            title="One team, the full picture."
+            description="Choose a starting point or bring us a challenge that needs a little of everything."
+          />
+
+          <div>
+            {ServiceRows.map(
+              ({
+                icon: Icon,
+                title,
+                text,
+                subservices,
+              }) => (
+                <div className="service-row" key={title}>
+                  <div>
+                    <div className="icon-chip chip-teal">
+                      <Icon size={22} />
+                    </div>
+
+                    <h3>{title}</h3>
+
+                    <p>{text}</p>
+                  </div>
+
+                  <div className="subservice-grid">
+                    {subservices.map((service) => (
+                      <div
+                        className="subservice"
+                        key={service.title}
+                      >
+                        <strong>{service.title}</strong>
+
+                        <p>{service.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ),
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section
+        className="section"
+        style={{ background: "#f1f3f1" }}
+      >
+        <div className="site-container">
+          <SectionHeading
+            eyebrow="Simple pricing"
+            title="A clear place to start."
+            description="Every engagement begins with a conversation. These packages help frame the right level of support."
+          />
+
+          <div className="grid-3">
+            {PricingPlans.map((plan) => (
+              <article
+                className={`card pricing-card ${plan.popular ? "dark-pricing" : ""
+                  }`}
+                key={plan.name}
+              >
+                {plan.popular && (
+                  <span className="popular">
+                    Most popular
+                  </span>
+                )}
+
+                <h3>{plan.name}</h3>
+
+                <div className="price">
+                  {plan.price}
+
+                  {plan.period && (
+                    <small>{plan.period}</small>
+                  )}
+                </div>
+
+                <p
+                  style={{
+                    color: plan.popular
+                      ? "#b5c0c5"
+                      : "#5b6472",
+                  }}
+                >
+                  {plan.description}
+                </p>
+
+                <Checklist items={plan.features} />
+
+                <Action
+                  href="/contact"
+                  variant={
+                    plan.popular ? undefined : "ghost"
+                  }
+                >
+                  {plan.action}
+                </Action>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Section */}
+      <section className="section">
+        <div className="site-container">
+          <SectionHeading
+            eyebrow="Who we work with"
+            title="Built for people doing meaningful work."
+          />
+
+          <div className="grid-3">
+            {Industries.map((industry) => (
+              <IconCard
+                key={industry.name}
+                icon={industry.icon}
+                title={industry.name}
+                tone={industry.tone}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Digital Chautari */}
+      <DarkBanner
+        eyebrow="Why Digital Chautari"
+        title="A partner who stays in the room."
+        text="Good work needs trust, transparency, and the flexibility to respond to what we learn."
+      >
+        <div
+          className="grid-3"
+          style={{ marginTop: 32 }}
+        >
+          {Benefits.map((benefit) => (
+            <div className="dark-card" key={benefit}>
+              <CheckMark />
+              {benefit}
+            </div>
+          ))}
+        </div>
+      </DarkBanner>
+
+      {/* Closing CTA */}
+      <ClosingCta
+        title="Let's find the right service for you."
+        text="Tell us where you are and where you want to go. We'll help you find the first useful step."
+      />
+    </>
+  );
+}
+
+function CheckMark() {
+  return (
+    <span
+      style={{
+        display: "inline-grid",
+        placeItems: "center",
+        width: 25,
+        height: 25,
+        borderRadius: "50%",
+        background: "#e0a930",
+        color: "#0b1220",
+        marginRight: 10,
+      }}
+    >
+      ✓
+    </span>
+  );
+}
