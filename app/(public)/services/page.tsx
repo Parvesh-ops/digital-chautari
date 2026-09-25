@@ -8,6 +8,7 @@ import {
   SectionHeading,
 } from "@/components/site";
 import { Benefits, Industries, PricingPlans, ServiceRows } from "@/src/constants/Services";
+import { Sparkles } from "lucide-react";
 
 export default function Services() {
   return (
@@ -176,10 +177,18 @@ export default function Services() {
       </DarkBanner>
 
       {/* Closing CTA */}
-      <ClosingCta
-        title="Let's find the right service for you."
-        text="Tell us where you are and where you want to go. We'll help you find the first useful step."
-      />
+       <section className="section">
+        <div className="site-container">
+          <div className="join-cta">
+            <Sparkles size={28} />
+            <h2>Let's find the right service for you</h2>
+            <Action href="/contact" variant="light">
+              Book a Consultation
+              {/* <ArrowRight size={16} /> */}
+            </Action>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

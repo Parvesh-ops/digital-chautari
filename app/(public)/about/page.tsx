@@ -1,5 +1,6 @@
 import { ArrowRight, Briefcase, Compass, Handshake, Heart, Lightbulb, ShieldCheck, Sparkles, Star, Target, Users } from "lucide-react";
 import { Action, Hero, SectionHeading } from "@/components/site";
+import Image from "next/image";
 
 const storyStats = [
   { value: "2025", label: "Founded", tone: "teal" },
@@ -168,7 +169,7 @@ export default function AboutPage() {
             <h2>Want to join our journey?</h2>
             <Action href="/contact" variant="light">
               Get in Touch
-              <ArrowRight size={16} />
+              {/* <ArrowRight size={16} /> */}
             </Action>
           </div>
         </div>

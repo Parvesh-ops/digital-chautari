@@ -185,9 +185,17 @@ export function Checklist({ items }: { items: string[] }) {
 export function ClosingCta({
   title,
   text = "Bring your next bold idea to life with a team that cares about the details.",
+  primaryLabel = "Start a Project",
+  primaryHref = "/contact",
+  secondaryLabel = "View Services",
+  secondaryHref = "/services",
 }: {
   title: string;
   text?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
 }) {
   return (
     <section className="section">
@@ -199,9 +207,15 @@ export function ClosingCta({
 
           <p>{text}</p>
 
-          <Action href="/contact" variant="light">
-            Book a Consultation
-          </Action>
+          <div className="closing-cta-actions">
+            <Link href={primaryHref} className="closing-cta-button primary">
+              {primaryLabel}
+              <ArrowRight size={16} />
+            </Link>
+            <Link href={secondaryHref} className="closing-cta-button secondary">
+              {secondaryLabel}
+            </Link>
+          </div>
         </div>
       </div>
     </section>

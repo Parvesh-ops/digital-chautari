@@ -21,7 +21,13 @@ export default function Home() {
       <ProcessSection />
       <TestimonialsSection />
       <BlogSection />
-      <ClosingCta title="Ready to build something extraordinary together?" />
+      <ClosingCta
+        title="Ready to build something extraordinary together?"
+        primaryLabel="Start a Project"
+        secondaryLabel="View Services"
+        primaryHref="/contact"
+        secondaryHref="/services"
+      />
     </>
   );
 }
