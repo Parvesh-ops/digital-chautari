@@ -19,7 +19,22 @@ import {
   Stats,
 } from "@/components/site";
 import { Features } from "@/src/constants/Features";
-import { products, sectors } from "@/src/data/data";
+
+
+const sectors = [
+  "Healthcare",
+  "E-Commerce",
+  "Real Estate",
+  "Education",
+  "Tourism & Hospitality",
+  "Media & Publishing",
+];
+
+const products = [
+  ["🌱", "Eco", "Creative marketing agency", "Purposeful campaigns for brands ready to grow."],
+  ["◉", "One", "Content creation studio", "Stories, films, and visuals that stay with people."],
+  ["♡", "Physio@Home", "Health-tech platform", "Expert physiotherapy, wherever recovery happens."],
+];
 
 export default function Home() {
   return (
@@ -148,7 +163,7 @@ export default function Home() {
             description="We make things that help brands communicate, people create, and communities live healthier lives."
           />
           <div className="grid-3">
-            {products.map(([icon, name, label, text]: any, i) => (
+            {products.map(([icon, name, label, text], i) => (
               <article className="card" key={name}>
                 <div className={`icon-chip chip-${["mint", "gold", "teal"][i]}`}>
                   {icon}
