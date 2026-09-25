@@ -1,318 +1,178 @@
-import {
-  HeartPulse,
-  Lightbulb,
-  PenTool,
-  Rocket,
-  ShieldCheck,
-  Sparkles,
-  Users,
-  Zap,
-} from "lucide-react";
-import {
-  Action,
-  Checklist,
-  ClosingCta,
-  DarkBanner,
-  Hero,
-  IconCard,
-  SectionHeading,
-  Stats,
-} from "@/components/site";
-import { Features } from "@/src/constants/Features";
+import { ArrowRight, Briefcase, Compass, Handshake, Heart, Lightbulb, ShieldCheck, Sparkles, Star, Target, Users } from "lucide-react";
+import { Action, Hero, SectionHeading } from "@/components/site";
 
-
-const sectors = [
-  "Healthcare",
-  "E-Commerce",
-  "Real Estate",
-  "Education",
-  "Tourism & Hospitality",
-  "Media & Publishing",
+const storyStats = [
+  { value: "2025", label: "Founded", tone: "teal" },
+  { value: "3", label: "Products", tone: "navy" },
+  { value: "Kathmandu", label: "HQ", tone: "white" },
+  { value: "7+", label: "Team Members", tone: "gold" },
 ];
 
-const products = [
-  ["🌱", "Eco", "Creative marketing agency", "Purposeful campaigns for brands ready to grow."],
-  ["◉", "One", "Content creation studio", "Stories, films, and visuals that stay with people."],
-  ["♡", "Physio@Home", "Health-tech platform", "Expert physiotherapy, wherever recovery happens."],
+const missionVision = [
+  {
+    title: "Mission",
+    text: "To help businesses, communities, and people grow through thoughtful digital products, meaningful storytelling, and reliable technology solutions.",
+    icon: <Target size={20} />,
+  },
+  {
+    title: "Vision",
+    text: "To become a trusted digital partner in Nepal and beyond, building ideas that matter and experiences that leave a lasting impact.",
+    icon: <Compass size={20} />,
+  },
 ];
 
-export default function Home() {
+const values = [
+  { name: "Passion", text: "We care deeply about the work and the people behind it.", icon: <Heart size={18} /> },
+  { name: "Creativity", text: "We turn ideas into design, stories, and experiences that feel alive.", icon: <Lightbulb size={18} /> },
+  { name: "Excellence", text: "We aim for thoughtful execution and long-term quality in every detail.", icon: <Star size={18} /> },
+  { name: "Collaboration", text: "We work closely with teams, clients, and partners to move forward together.", icon: <Handshake size={18} /> },
+];
+
+const trustItems = [
+  "ISO 9001 Ready",
+  "Data Protection",
+  "Global Delivery",
+  "Pan-Nepal Network",
+];
+
+const teamMembers = [
+  "Founder & CEO",
+  "Co-Founder & COO",
+  "Front-End Developer",
+  "Back-End Developer",
+  "Marketing Lead",
+  "Sales Executive",
+  "Business Development Officer",
+];
+
+const roadmap = [
+  { year: "2025", title: "The Idea", label: "A vision to build a digital company rooted in local insight and global ambition." },
+  { year: "2025", title: "First Products", label: "We launched our first products to bring value through digital storytelling and services." },
+  { year: "2026", title: "Health-Tech Entry", label: "We expanded into health technology with a more human, accessible care experience." },
+  { year: "2026", title: "Company Registration", label: "We formalized the company foundation to scale with trust, structure, and purpose." },
+];
+
+export default function AboutPage() {
   return (
     <>
       <Hero
-        eyebrow="🚀 Welcome to Digital Chautari"
-        title="We build digital bridges between ideas and impact"
-        highlight="digital bridges"
-        description="We are a creative technology company from Kathmandu, helping ambitious brands grow, tell better stories, and build products that matter."
-      >
-        <div className="hero-actions">
-          <Action href="/services">Explore services</Action>
-          <Action href="/products" variant="ghost">
-            View products
-          </Action>
-        </div>
-        <Stats
-          items={[
-            { value: "3", label: "Products", icon: <Rocket size={17} /> },
-            { value: "6+", label: "Team members", icon: <Users size={17} /> },
-            { value: "100%", label: "Commitment", icon: <HeartPulse size={17} /> },
-          ]}
-        />
-      </Hero>
+        eyebrow="About us"
+        title="The people behind Digital Chautari"
+        description="A growing digital company rooted in Kathmandu, shaped by teamwork, creativity, and a belief that thoughtful technology can help people and businesses move forward."
+      />
 
       <section className="section">
         <div className="site-container">
-          <div className="grid-4">
-            {Features.map(([icon, title, text], i) => (
-              <IconCard
-                key={title as string}
-                icon={icon}
-                title={title as string}
-                text={text as string}
-                tone={["mint", "teal", "gold", "lilac"][i]}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="site-container split">
-          <div className="split-copy">
-            <span className="eyebrow">Who we are</span>
-            <h2>A Chautari where ideas meet execution.</h2>
+          <div className="about-story-heading">
+            <span className="eyebrow">Our story</span>
+            <h2>From a chautari to a digital powerhouse</h2>
             <p>
-              Like the traditional chautari, we make space for people and ideas to
-              gather. Digital Chautari brings strategy, creativity, and engineering
-              into one thoughtful team.
+              Digital Chautari began with the idea that meaningful ideas deserve space, clarity, and momentum. Inspired by the familiar chautari — a place for conversation, exchange, and connection — we built a company that brings together strategy, design, development, and storytelling under one roof.
             </p>
-            <p>
-              We work with founders, teams, and organizations who want their next
-              chapter to feel meaningful and move the needle.
-            </p>
-            <Checklist
-              items={[
-                "Creative strategy",
-                "Brand storytelling",
-                "Full-stack engineering",
-                "Health-tech expertise",
-              ]}
-            />
-            <Action href="/about">Meet the team</Action>
           </div>
 
-          <div className="grid-2">
-            <IconCard
-              icon="◎"
-              title="Digital marketing"
-              text="Reach the right people with clarity."
-              tone="mint"
-            />
-            <IconCard
-              icon="✦"
-              title="Content creation"
-              text="Make stories worth sharing."
-              tone="gold"
-            />
-            <IconCard
-              icon="⌘"
-              title="Software development"
-              text="Build useful, durable products."
-              tone="teal"
-            />
-            <IconCard
-              icon="◌"
-              title="Branding & design"
-              text="Look as considered as you are."
-              tone="lilac"
-            />
+          <div className="story-grid">
+            {storyStats.map((stat, index) => (
+              <div key={stat.label} className={`story-tile tile-${stat.tone}`}>
+                <span>{stat.label}</span>
+                <strong>{stat.value}</strong>
+                {index === 1 && <small>Digital growth</small>}
+                {index === 3 && <small>Across teams</small>}
+              </div>
+            ))}
           </div>
         </div>
       </section>
-
-      <DarkBanner
-        eyebrow="The numbers"
-        title="Good work leaves a measurable mark."
-        text="From first sketch to lasting partnership, we bring energy and accountability to every brief."
-      >
-        <div className="numbered">
-          <div>
-            <strong>250+</strong>
-            <p>Projects delivered</p>
-          </div>
-          <div>
-            <strong>40+</strong>
-            <p>Happy clients</p>
-          </div>
-          <div>
-            <strong>1M+</strong>
-            <p>Content views</p>
-          </div>
-          <div>
-            <strong>98%</strong>
-            <p>Client retention</p>
-          </div>
-        </div>
-      </DarkBanner>
 
       <section className="section">
         <div className="site-container">
-          <SectionHeading
-            eyebrow="Our products"
-            title="Three ventures, one vision."
-            description="We make things that help brands communicate, people create, and communities live healthier lives."
-          />
-          <div className="grid-3">
-            {products.map(([icon, name, label, text], i) => (
-              <article className="card" key={name}>
-                <div className={`icon-chip chip-${["mint", "gold", "teal"][i]}`}>
-                  {icon}
-                </div>
-                <p className="blog-meta" style={{ marginTop: 18 }}>
-                  {label}
-                </p>
-                <h3 style={{ marginTop: 8, fontSize: 22 }}>{name}</h3>
-                <p style={{ color: "#5b6472", marginTop: 8 }}>{text}</p>
-                <Action href="/products" variant="ghost">
-                  Learn more
-                </Action>
+          <div className="mission-grid">
+            {missionVision.map((item) => (
+              <article key={item.title} className="mission-card">
+                <div className="mission-icon">{item.icon}</div>
+                <span className="eyebrow">{item.title}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
-
-      <section className="section" style={{ paddingTop: 10 }}>
-        <div className="site-container">
-          <SectionHeading eyebrow="Sectors we serve" title="Useful in every corner of life." />
-          <div className="grid-3">
-            {sectors.map((sector, i) => (
-              <IconCard
-                key={sector}
-                icon={
-                  [
-                    <HeartPulse size={20} />,
-                    <Zap size={20} />,
-                    <ShieldCheck size={20} />,
-                    <Lightbulb size={20} />,
-                    <SparklesIcon />,
-                    <PenTool size={20} />,
-                  ][i]
-                }
-                title={sector}
-                tone={["mint", "teal", "gold", "lilac", "pink", "mint"][i]}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <DarkBanner
-        eyebrow="How we work"
-        title="Our 4-step process"
-        text="A simple rhythm that keeps big ideas moving and everyone in the room."
-      >
-        <div className="numbered">
-          {[
-            ["01", "Discover", "Find the signal in the noise."],
-            ["02", "Design", "Shape a direction people can feel."],
-            ["03", "Develop", "Build with care and momentum."],
-            ["04", "Deliver", "Launch, learn, and keep improving."],
-          ].map(([number, title, text]) => (
-            <div className="dark-card" key={number}>
-              <strong>{number}</strong>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </div>
-          ))}
-        </div>
-      </DarkBanner>
 
       <section className="section">
         <div className="site-container">
-          <SectionHeading eyebrow="Kind words" title="Good company makes good work." />
-          <div className="grid-3">
-            {[
-              [
-                "\u201CDigital Chautari brought clarity to a complex launch and made the whole process feel exciting.\u201D",
-                "Aayush Shrestha",
-                "Founder, Karkhana",
-              ],
-              [
-                "\u201CThey listen deeply, move quickly, and care about the last 10% as much as we do.\u201D",
-                "Mina Gurung",
-                "Marketing Lead, Sano",
-              ],
-              [
-                "\u201CThe team feels like an extension of ours. The work speaks for itself.\u201D",
-                "Rohan Adhikari",
-                "Director, Northstar",
-              ],
-            ].map(([quote, name, role]) => (
-              <article className="card" key={name}>
-                <div className="stars">★★★★★</div>
-                <p className="quote" style={{ marginTop: 14 }}>
-                  {quote}
-                </p>
-                <div className="quote-author">
-                  {name}
-                  <small>{role}</small>
-                </div>
+          <SectionHeading eyebrow="Values" title="The principles behind our work." />
+          <div className="values-grid">
+            {values.map((value) => (
+              <article key={value.name} className="value-card">
+                <div className="value-icon">{value.icon}</div>
+                <h3>{value.name}</h3>
+                <p>{value.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="dark-section section">
         <div className="site-container">
-          <SectionHeading eyebrow="Notes from the Chautari" title="Latest from our blog" />
-          <div className="grid-3">
-            {[
-              [
-                "Designing for trust",
-                "Brand thinking",
-                "How small signals can make a digital experience feel instantly human.",
-              ],
-              [
-                "The content flywheel",
-                "Content",
-                "A practical rhythm for making better content without burning out.",
-              ],
-              [
-                "Care, made accessible",
-                "Health-tech",
-                "What we learned building a more human way to start physiotherapy.",
-              ],
-            ].map(([title, cat, text], i) => (
-              <article className="card blog-card" key={title}>
-                <div
-                  className="blog-art"
-                  style={{
-                    background: [
-                      "linear-gradient(135deg,#0f9488,#b6d7bb)",
-                      "linear-gradient(135deg,#e0a930,#f8d88a)",
-                      "linear-gradient(135deg,#244c6a,#9bc9c6)",
-                    ][i],
-                  }}
-                />
-                <span className="blog-meta">{cat} · 5 min read</span>
-                <h3>{title}</h3>
-                <p style={{ color: "#5b6472", marginTop: 8, fontSize: 14 }}>{text}</p>
-                <Action href="/contact" variant="ghost">
-                  Read more
-                </Action>
+          <SectionHeading eyebrow="Quality & trust" title="Committed to quality & trust" light />
+          <div className="trust-grid">
+            {trustItems.map((item) => (
+              <div key={item} className="dark-card trust-card">
+                <div className="trust-icon"><ShieldCheck size={18} /></div>
+                <h3>{item}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="site-container">
+          <SectionHeading eyebrow="Our team" title="The people making it happen." />
+          <div className="team-grid">
+            {teamMembers.map((role, index) => (
+              <article key={role} className="team-card">
+                <div className="team-avatar">{role.split(" ").slice(0, 2).map((segment) => segment[0]).join("")}</div>
+                <p>{role}</p>
+                <span>Team Member {index + 1}</span>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <ClosingCta title="Ready to build something extraordinary together?" />
+      <section className="dark-section section">
+        <div className="site-container">
+          <SectionHeading eyebrow="Roadmap" title="How we built from idea to impact." light />
+          <div className="timeline">
+            {roadmap.map((item, index) => (
+              <div key={`${item.title}-${item.year}`} className={`timeline-item ${index % 2 === 0 ? "left" : "right"}`}>
+                <span className="year-pill">{item.year}</span>
+                <span className="timeline-dot" aria-hidden="true" />
+                <div className="timeline-content">
+                  <h3>{item.title}</h3>
+                  <p>{item.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="site-container">
+          <div className="join-cta">
+            <Sparkles size={28} />
+            <h2>Want to join our journey?</h2>
+            <Action href="/contact" variant="light">
+              Get in Touch
+              <ArrowRight size={16} />
+            </Action>
+          </div>
+        </div>
+      </section>
     </>
   );
-}
-
-function SparklesIcon() {
-  return <Sparkles size={20} />;
 }
