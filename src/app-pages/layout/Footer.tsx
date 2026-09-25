@@ -1,16 +1,10 @@
 import Link from "next/link";
 
 
-import { Separator } from "@/components/ui/separator";
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 
-const NAV_LINKS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Service", href: "/services" },
-  { label: "Product", href: "/products" },
-  { label: "Contact", href: "/contact" },
-];
+const NAV_LINKS = [{ label: "About", href: "/about" }, { label: "Services", href: "/services" }, { label: "Products", href: "/products" }, { label: "Contact", href: "/contact" }];
+const SERVICE_LINKS = ["Digital marketing", "Content creation", "Software development", "Branding & design"];
 
 const SOCIAL_LINKS = [
   { label: "Twitter", href: "https://twitter.com", icon: BsTwitter },
@@ -22,29 +16,22 @@ const SOCIAL_LINKS = [
 export function Footer() {
   const year = new Date().getFullYear();
 
-  return (
-    <footer className="w-full border-t bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
+  return <footer className="site-footer"><div className="site-container">
+        <div className="footer-grid">
           {/* Brand */}
           <div>
-            <Link href="/" className="text-lg font-semibold">
-              YourLogo
-            </Link>
-            <p className="mt-3 max-w-xs text-sm text-muted-foreground">
-              Building products and services people actually enjoy using.
-            </p>
+            <Link href="/" className="brand footer-brand"><span className="brand-mark">DC</span><span><strong>Digital Chautari</strong><small>Ideas into impact</small></span></Link>
+            <p>Creative technology for brands, stories, and better health outcomes.</p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h3 className="text-sm font-semibold">Navigation</h3>
-            <ul className="mt-4 space-y-2">
+            <h3>Company</h3><ul>
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="footer-link"
                   >
                     {link.label}
                   </Link>
@@ -55,26 +42,8 @@ export function Footer() {
 
           {/* Contact / Social */}
           <div>
-            <h3 className="text-sm font-semibold">Connect</h3>
-            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>
-                <a
-                  href="mailto:hello@example.com"
-                  className="transition-colors hover:text-foreground"
-                >
-                  hello@example.com
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+10000000000"
-                  className="transition-colors hover:text-foreground"
-                >
-                  +1 (000) 000-0000
-                </a>
-              </li>
-            </ul>
-            <div className="mt-4 flex gap-3">
+            <h3>Services</h3><ul>{SERVICE_LINKS.map((link) => <li key={link}><Link href="/services" className="footer-link">{link}</Link></li>)}</ul>
+          </div><div><h3>Connect</h3><ul><li><a className="footer-link" href="mailto:hello@digitalchautari.com">hello@digitalchautari.com</a></li><li><a className="footer-link" href="tel:+9779800000000">+977 980-000-0000</a></li></ul><div className="social-row">
               {SOCIAL_LINKS.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -84,7 +53,7 @@ export function Footer() {
                     target="_blank"
                     rel="noreferrer"
                     aria-label={social.label}
-                    className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+                    className="social-link"
                   >
                     <Icon className="h-4 w-4" />
                   </a>
@@ -93,23 +62,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-
-        <Separator className="my-8" />
-
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © {year} YourLogo. All rights reserved.
-          </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link href="/privacy" className="hover:text-foreground">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-foreground">
-              Terms of Service
-            </Link>
-          </div>
-        </div>
+        <div className="footer-bottom"><span>© {year} Digital Chautari. All rights reserved.</span><span>Privacy · Terms</span></div>
       </div>
-    </footer>
-  );
+    </footer>;
 }

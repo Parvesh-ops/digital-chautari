@@ -1,9 +1,10 @@
-import React from 'react'
+import { BriefcaseBusiness, Code2, Mail, Megaphone, PenTool } from "lucide-react";
+import { ContactDetails, ContactForm, DarkBanner, Hero, IconCard, SectionHeading } from "@/components/site";
 
-const page = () => {
-  return (
-    <div>contact</div>
-  )
-}
-
-export default page
+export default function Contact() { return <>
+  <Hero eyebrow="Let’s talk" title="Let’s start a conversation" description="Have a project in mind, a question about our products, or just want to say hello? We’d love to hear from you." />
+  <section className="section"><div className="site-container"><ContactDetails /></div></section>
+  <section className="section" style={{ paddingTop: 12 }}><div className="site-container"><SectionHeading eyebrow="Direct lines" title="Reach the right team."/><div className="grid-4">{[[Megaphone, "Marketing", "marketing@digitalchautari.com"], [PenTool, "Content Studio", "studio@digitalchautari.com"], [Code2, "Software Dev", "tech@digitalchautari.com"], [BriefcaseBusiness, "Business Dev", "partnerships@digitalchautari.com"]].map(([Icon, title, text], i) => <IconCard key={title as string} icon={<Icon size={21} />} title={title as string} text={text as string} tone={["mint", "gold", "teal", "lilac"][i]} />)}</div></div></section>
+  <section className="section" style={{ background: "#f1f3f1" }}><div className="site-container contact-layout"><div><SectionHeading eyebrow="Your turn" title="Tell us what you’re thinking." description="A few details help us bring the right people into the first conversation."/><div style={{ marginTop: 28 }}><ContactForm /></div></div><div><div className="map-card"><MapPinIcon /><strong style={{ marginTop: 145 }}>Kathmandu, Nepal</strong><span>Come say hello at our Chautari.</span></div><div className="dark-card" style={{ marginTop: 18 }}><span className="eyebrow">Need quick answers?</span><h3 style={{ marginTop: 14, color: "white" }}>Visit our FAQ page <span style={{ color: "#e0a930" }}>→</span></h3></div><div style={{ marginTop: 24 }}><h3 style={{ fontSize: 16 }}>Response times</h3><ul className="response-list"><li>Email <strong>Within 24 hours</strong></li><li>Proposals <strong>2–3 days</strong></li><li>Urgent requests <strong>Same day</strong></li></ul></div></div></div></section>
+</> }
+function MapPinIcon() { return <span style={{ position: "absolute", top: "48%", left: "48%", display: "grid", placeItems: "center", width: 34, height: 34, borderRadius: "50%", background: "#0f9488", color: "white" }}>⌖</span>; }
