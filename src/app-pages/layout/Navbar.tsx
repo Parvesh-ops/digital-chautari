@@ -16,9 +16,9 @@ import { cn } from "@/src/lib/utils";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Products", href: "/products" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -57,7 +57,7 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="desktop-cta">
-          <Link href="/contact" className="nav-cta">Contact us <span>↗</span></Link>
+          <Link href="/contact" className="nav-cta">Contact Us <span>↗</span></Link>
         </div>
 
         {/* Mobile menu */}
@@ -87,7 +87,7 @@ export function Navbar() {
                     </Link>
                   );
                 })}
-                <Link className="nav-cta mobile-cta" href="/contact" onClick={() => setOpen(false)}>Contact us <span>↗</span></Link>
+                <Link className="nav-cta mobile-cta" href="/contact" onClick={() => setOpen(false)}>Contact Us <span>↗</span></Link>
               </nav>
             </SheetContent>
           </Sheet>

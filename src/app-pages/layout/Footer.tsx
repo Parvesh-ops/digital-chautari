@@ -3,8 +3,13 @@ import Link from "next/link";
 
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
 
-const NAV_LINKS = [{ label: "About", href: "/about" }, { label: "Services", href: "/services" }, { label: "Products", href: "/products" }, { label: "Contact", href: "/contact" }];
+const NAV_LINKS = [{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: "Products", href: "/products" }, { label: "About", href: "/about" }, { label: "Contact", href: "/contact" }];
 const SERVICE_LINKS = ["Digital marketing", "Content creation", "Software development", "Branding & design"];
+const LEGAL_LINKS = [
+  { label: "Privacy policy", href: "/privacy" },
+  { label: "Terms of service", href: "/terms" },
+  { label: "Cookie policy", href: "/cookies" },
+];
 
 const SOCIAL_LINKS = [
   { label: "Twitter", href: "https://twitter.com", icon: BsTwitter },
@@ -40,10 +45,17 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact / Social */}
+          {/* Services */}
           <div>
             <h3>Services</h3><ul>{SERVICE_LINKS.map((link) => <li key={link}><Link href="/services" className="footer-link">{link}</Link></li>)}</ul>
-          </div><div><h3>Connect</h3><ul><li><a className="footer-link" href="mailto:hello@digitalchautari.com">hello@digitalchautari.com</a></li><li><a className="footer-link" href="tel:+9779800000000">+977 980-000-0000</a></li></ul><div className="social-row">
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h3>Legal</h3>
+            <ul>{LEGAL_LINKS.map((link) => <li key={link.href}><Link href={link.href} className="footer-link">{link.label}</Link></li>)}</ul>
+            <ul className="footer-contact-list"><li><a className="footer-link" href="mailto:hello@digitalchautari.com">hello@digitalchautari.com</a></li><li><a className="footer-link" href="tel:+9779800000000">+977 980-000-0000</a></li></ul>
+            <div className="social-row">
               {SOCIAL_LINKS.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -62,7 +74,7 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="footer-bottom"><span>© {year} Digital Chautari. All rights reserved.</span><span>Privacy · Terms</span></div>
+        <div className="footer-bottom"><span>© {year} Digital Chautari. All rights reserved.</span></div>
       </div>
     </footer>;
 }
