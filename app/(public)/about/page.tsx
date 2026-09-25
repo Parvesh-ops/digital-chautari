@@ -18,28 +18,8 @@ import {
   SectionHeading,
   Stats,
 } from "@/components/site";
-
-const features = [
-  [<Rocket size={21} />, "Growth-driven", "Clear strategy and measurable momentum."],
-  [<PenTool size={21} />, "Creative-first", "Ideas with a point of view and a pulse."],
-  [<Zap size={21} />, "Tech-powered", "Digital products built for real people."],
-  [<Users size={21} />, "Client-centric", "An honest, close-knit team beside you."],
-];
-
-const sectors = [
-  "Healthcare",
-  "E-Commerce",
-  "Real Estate",
-  "Education",
-  "Tourism & Hospitality",
-  "Media & Publishing",
-];
-
-const products = [
-  ["🌱", "Eco", "Creative marketing agency", "Purposeful campaigns for brands ready to grow."],
-  ["◉", "One", "Content creation studio", "Stories, films, and visuals that stay with people."],
-  ["♡", "Physio@Home", "Health-tech platform", "Expert physiotherapy, wherever recovery happens."],
-];
+import { Features } from "@/src/constants/Features";
+import { products, sectors } from "@/src/data/data";
 
 export default function Home() {
   return (
@@ -68,7 +48,7 @@ export default function Home() {
       <section className="section">
         <div className="site-container">
           <div className="grid-4">
-            {features.map(([icon, title, text], i) => (
+            {Features.map(([icon, title, text], i) => (
               <IconCard
                 key={title as string}
                 icon={icon}
@@ -168,7 +148,7 @@ export default function Home() {
             description="We make things that help brands communicate, people create, and communities live healthier lives."
           />
           <div className="grid-3">
-            {products.map(([icon, name, label, text], i) => (
+            {products.map(([icon, name, label, text]: any, i) => (
               <article className="card" key={name}>
                 <div className={`icon-chip chip-${["mint", "gold", "teal"][i]}`}>
                   {icon}
