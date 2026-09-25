@@ -779,9 +779,17 @@
 
   .mission-card {
     border: 1px solid #e7e5df;
-    border-radius: 18px;
+    border-radius: 12px;
     background: white;
-    padding: 28px;
+    padding: 22px;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .mission-card:hover,
+  .value-card:hover,
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px -18px rgba(16, 24, 38, .2);
   }
 
   .mission-icon {
@@ -816,8 +824,9 @@
   .value-card {
     background: white;
     border: 1px solid #e7e5df;
-    border-radius: 16px;
-    padding: 24px 20px;
+    border-radius: 12px;
+    padding: 22px;
+    transition: transform .25s ease, box-shadow .25s ease;
   }
 
   .value-icon {
@@ -854,6 +863,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .trust-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px -18px rgba(0, 0, 0, .45);
   }
 
   .trust-icon {
@@ -881,9 +896,10 @@
   .team-card {
     background: white;
     border: 1px solid #e7e5df;
-    border-radius: 16px;
-    padding: 24px 20px;
+    border-radius: 12px;
+    padding: 22px;
     text-align: center;
+    transition: transform .25s ease, box-shadow .25s ease;
   }
 
   .team-avatar {
