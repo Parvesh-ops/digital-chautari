@@ -1,4 +1,5 @@
-import { BarChart3, Code2, Heart, Megaphone, Palette, Search, Share2, Smartphone, Target } from "lucide-react";
+import { BarChart3, Building2, Code2, GraduationCap, HeartPulse, Megaphone, Newspaper, Palette, Plane, Search, Share2, ShoppingCart, Smartphone, Target } from "lucide-react";
+
 
 export const ServiceRows = [
   {
@@ -124,32 +125,32 @@ export const PricingPlans = [
 export const Industries = [
   {
     name: "Healthcare",
-    icon: <Heart size={20} />,
+    icon: <HeartPulse size={20} />,
     tone: "mint",
   },
   {
     name: "E-Commerce",
-    icon: <Share2 size={20} />,
+    icon: <ShoppingCart size={20} />,
     tone: "teal",
   },
   {
     name: "Real Estate",
-    icon: <Target size={20} />,
+    icon: <Building2 size={20} />,
     tone: "gold",
   },
   {
     name: "Education",
-    icon: <Search size={20} />,
+    icon: <GraduationCap size={20} />,
     tone: "lilac",
   },
   {
     name: "Tourism",
-    icon: <Smartphone size={20} />,
+    icon: <Plane size={20} />,
     tone: "pink",
   },
   {
     name: "Media",
-    icon: <BarChart3 size={20} />,
+    icon: <Newspaper size={20} />,
     tone: "mint",
   },
 ];

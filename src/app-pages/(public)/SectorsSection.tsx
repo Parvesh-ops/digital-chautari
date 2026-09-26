@@ -1,8 +1,13 @@
 import {
+  Building2,
+  GraduationCap,
   HeartPulse,
   Lightbulb,
+  Newspaper,
   PenTool,
+  Plane,
   ShieldCheck,
+  ShoppingCart,
   Sparkles,
   Zap,
 } from "lucide-react";
@@ -12,11 +17,11 @@ import { sectors } from "@/src/data/data";
 
 const sectorIcons = [
   <HeartPulse size={20} key="heart-pulse" />,
-  <Zap size={20} key="zap" />,
-  <ShieldCheck size={20} key="shield-check" />,
-  <Lightbulb size={20} key="lightbulb" />,
-  <Sparkles size={20} key="sparkles" />,
-  <PenTool size={20} key="pen-tool" />,
+  <ShoppingCart size={20} key="shopping-cart" />,
+  <Building2 size={20} key="building-2" />,
+  <GraduationCap size={20} key="graduation-cap" />,
+  <Plane size={20} key="plane" />,
+  <Newspaper size={20} key="newspaper" />,
 ];
 
 const tones = ["mint", "teal", "gold", "lilac", "pink", "mint"];
