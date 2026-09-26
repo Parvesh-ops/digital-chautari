@@ -122,7 +122,7 @@ export const PricingPlans = [
   },
 ];
 
-export const Industries = [
+export const ServicesIndustries = [
   {
     name: "Healthcare",
     icon: <HeartPulse size={20} />,
@@ -155,7 +155,7 @@ export const Industries = [
   },
 ];
 
-export const Benefits = [
+export const ServicesBenefits = [
   "Dedicated project manager",
   "Agile development cycle",
   "Transparent pricing",
