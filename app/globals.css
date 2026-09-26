@@ -171,6 +171,13 @@
     color: transparent;
   }
 
+  .form-error {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #dc2626;
+  }
+
   .eyebrow {
     display: inline-flex;
     align-items: center;
@@ -1634,5 +1641,6 @@
     .footer-bottom {
       flex-direction: column;
     }
+
   }
 }

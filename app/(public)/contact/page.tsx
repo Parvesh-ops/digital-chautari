@@ -3,20 +3,18 @@ import type { Metadata } from "next";
 import {
   BriefcaseBusiness,
   Code2,
-  Mail,
   MapPin,
   Megaphone,
   PenTool,
 } from "lucide-react";
 
 import {
-  ContactDetails,
-  ContactForm,
-  DarkBanner,
   Hero,
   IconCard,
   SectionHeading,
 } from "@/components/site";
+import ContactForm from "./ContactForm";
+import ContactDetails from "./ContactDetails";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -176,7 +174,7 @@ export default function Contact() {
                 </li>
 
                 <li>
-                  Proposals <strong>2–3 days</strong>
+                  Proposals <strong>2-3 days</strong>
                 </li>
 
                 <li>
