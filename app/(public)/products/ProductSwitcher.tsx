@@ -1,6 +1,6 @@
 "use client";
 
-import { Action } from "@/components/site";
+import { Action } from "@/src/components/common/site";
 import { useState } from "react";
 
 const products = [

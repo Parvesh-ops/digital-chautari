@@ -7,7 +7,7 @@ import {
   Hero,
   IconCard,
   SectionHeading,
-} from "@/components/site";
+} from "@/src/components/common/site";
 import { Benefits, Industries, PricingPlans, ServiceRows } from "@/src/constants/Services";
 import { Sparkles } from "lucide-react";
 
@@ -189,7 +189,7 @@ export default function Services() {
       </DarkBanner>
 
       {/* Closing CTA */}
-       <section className="section">
+      <section className="section">
         <div className="site-container">
           <div className="join-cta">
             <Sparkles size={28} />

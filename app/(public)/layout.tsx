@@ -1,7 +1,7 @@
 "use client";
 
-import { Navbar } from "@/src/app-pages/layout/Navbar";
-import { Footer } from "@/src/app-pages/layout/Footer";
+import { Navbar } from "@/src/components/app-pages/layout/Navbar";
+import { Footer } from "@/src/components/app-pages/layout/Footer";
 import React from "react";
 
 

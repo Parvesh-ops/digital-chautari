@@ -1,4 +1,4 @@
-import { Action, SectionHeading } from "@/components/site";
+import { Action, SectionHeading } from "@/src/components/common/site";
 import { blogPosts } from "@/src/data/data";
 
 export function BlogSection() {

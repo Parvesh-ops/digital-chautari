@@ -1,4 +1,4 @@
-import { IconCard } from "@/components/site";
+import { IconCard } from "@/src/components/common/site";
 import { Features } from "@/src/constants/Features";
 
 const tones = ["mint", "teal", "gold", "lilac"];

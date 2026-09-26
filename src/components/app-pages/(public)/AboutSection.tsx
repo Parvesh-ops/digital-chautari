@@ -1,4 +1,4 @@
-import { Action, Checklist, IconCard } from "@/components/site";
+import { Action, Checklist, IconCard } from "@/src/components/common/site";
 
 export function AboutSection() {
   return (

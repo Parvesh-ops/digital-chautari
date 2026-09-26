@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { ClosingCta } from "@/components/site";
-import { AboutSection } from "@/src/app-pages/(public)/AboutSection";
-import { BlogSection } from "@/src/app-pages/(public)/BlogSection";
-import { FeaturesSection } from "@/src/app-pages/(public)/FeaturesSection";
-import { HeroSection } from "@/src/app-pages/(public)/HeroSection";
-import { NumbersSection } from "@/src/app-pages/(public)/NumbersSection";
-import { ProductsSection } from "@/src/app-pages/(public)/ProductsSection";
-import { TestimonialsSection } from "@/src/app-pages/(public)/TestimonialsSection";
-import { SectorsSection } from "@/src/app-pages/(public)/SectorsSection";
-import { ProcessSection } from "@/src/app-pages/(public)/ProcessSection";
+import { ClosingCta } from "@/src/components/common/site";
+import { AboutSection } from "@/src/components/app-pages/(public)/AboutSection";
+import { BlogSection } from "@/src/components/app-pages/(public)/BlogSection";
+import { FeaturesSection } from "@/src/components/app-pages/(public)/FeaturesSection";
+import { HeroSection } from "@/src/components/app-pages/(public)/HeroSection";
+import { NumbersSection } from "@/src/components/app-pages/(public)/NumbersSection";
+import { ProductsSection } from "@/src/components/app-pages/(public)/ProductsSection";
+import { TestimonialsSection } from "@/src/components/app-pages/(public)/TestimonialsSection";
+import { SectorsSection } from "@/src/components/app-pages/(public)/SectorsSection";
+import { ProcessSection } from "@/src/components/app-pages/(public)/ProcessSection";
 
 
 

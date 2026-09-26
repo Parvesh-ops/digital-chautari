@@ -1,6 +1,6 @@
 import { HeartPulse, Rocket, Users } from "lucide-react";
 
-import { Action, Hero, Stats } from "@/components/site";
+import { Action, Hero, Stats } from "@/src/components/common/site";
 
 const Items = [
     { value: "3", label: "Products", icon: <Rocket size={17} /> },

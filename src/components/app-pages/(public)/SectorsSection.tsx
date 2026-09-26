@@ -12,7 +12,7 @@ import {
   Zap,
 } from "lucide-react";
 
-import { IconCard, SectionHeading } from "@/components/site";
+import { IconCard, SectionHeading } from "@/src/components/common/site";
 import { sectors } from "@/src/data/data";
 
 const sectorIcons = [

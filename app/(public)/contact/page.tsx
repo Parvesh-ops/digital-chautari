@@ -12,7 +12,7 @@ import {
   Hero,
   IconCard,
   SectionHeading,
-} from "@/components/site";
+} from "@/src/components/common/site";
 import ContactForm from "./ContactForm";
 import ContactDetails from "./ContactDetails";
 

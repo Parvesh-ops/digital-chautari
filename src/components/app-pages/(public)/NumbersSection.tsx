@@ -1,4 +1,4 @@
-import { DarkBanner } from "@/components/site";
+import { DarkBanner } from "@/src/components/common/site";
 import { numbers } from "@/src/data/data";
 
 export function NumbersSection() {

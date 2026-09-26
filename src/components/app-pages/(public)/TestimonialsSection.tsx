@@ -1,4 +1,4 @@
-import { SectionHeading } from "@/components/site";
+import { SectionHeading } from "@/src/components/common/site";
 import { testimonials } from "@/src/data/data";
 
 export function TestimonialsSection() {
