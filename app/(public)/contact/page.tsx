@@ -13,8 +13,8 @@ import {
   IconCard,
   SectionHeading,
 } from "@/src/components/common/site";
-import ContactForm from "../../../src/components/app-pages/ContactForm";
-import ContactDetails from "../../../src/components/app-pages/ContactDetails";
+import ContactForm from "../../../src/components/app-pages/contact/components/ContactForm";
+import ContactDetails from "../../../src/components/app-pages/contact/components/ContactDetails";
 
 export const metadata: Metadata = {
   title: "Contact",
