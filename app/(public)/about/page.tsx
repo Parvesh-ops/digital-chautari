@@ -91,7 +91,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="story-grid">
+          <div className="grid grid-2  md:grid-cols-4">
             {storyStats.map((stat, index) => (
               <div key={stat.label} className={`story-tile tile-${stat.tone}`}>
                 <span>{stat.label}</span>
@@ -106,7 +106,7 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="site-container">
-          <div className="mission-grid">
+          <div className="grid grid-2">
             {missionVision.map((item) => (
               <article key={item.title} className="mission-card">
                 <div className="mission-icon">{item.icon}</div>
@@ -122,7 +122,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="site-container">
           <SectionHeading eyebrow="Values" title="The principles behind our work." />
-          <div className="values-grid">
+          <div className="grid grid-2  md:grid-cols-4">
             {values.map((value) => (
               <article key={value.name} className="value-card">
                 <div className="value-icon">{value.icon}</div>
@@ -137,7 +137,7 @@ export default function AboutPage() {
       <section className="dark-section section">
         <div className="site-container">
           <SectionHeading eyebrow="Quality & trust" title="Committed to quality & trust" light />
-          <div className="trust-grid">
+          <div className="grid grid-2  md:grid-cols-4">
             {trustItems.map((item) => (
               <div key={item} className="dark-card trust-card">
                 <div className="trust-icon"><ShieldCheck size={18} /></div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
       <section className="section">
         <div className="site-container">
           <SectionHeading eyebrow="Our team" title="The people making it happen." />
-          <div className="team-grid">
+          <div className="grid grid-2  md:grid-cols-4">
             {teamMembers.map((role, index) => (
               <article key={role} className="team-card">
                 <div className="team-avatar">{role.split(" ").slice(0, 2).map((segment) => segment[0]).join("")}</div>
