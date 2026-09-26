@@ -1,6 +1,7 @@
 
 import type { Metadata } from "next";
-import { Action, DarkBanner, Hero, ProductSwitcher } from "@/components/site";
+import { Action, DarkBanner, Hero, } from "@/components/site";
+import { ProductSwitcher } from "./ProductSwitcher";
 
 export const metadata: Metadata = {
   title: "Products",
