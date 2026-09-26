@@ -1,7 +1,7 @@
 
 import type { Metadata } from "next";
-import { Action, DarkBanner, Hero, } from "@/src/components/common/site";
-import { ProductSwitcher } from "../../../src/components/app-pages/ProductSwitcher";
+import ProductPage from "@/src/components/app-pages/product/page";
+import { Hero } from "@/src/components/common/site";
 
 export const metadata: Metadata = {
   title: "Products",
@@ -25,24 +25,8 @@ export default function Products() {
       />
 
       {/* Products Section */}
-      <section className="section">
-        <div className="site-container">
-          <ProductSwitcher />
-        </div>
-      </section>
+      <ProductPage />
 
-      {/* Health-Tech Spotlight */}
-      <DarkBanner
-        eyebrow="Health-tech spotlight"
-        title="Physio@Home — healthcare reimagined"
-        text="Better access to quality physiotherapy, powered by thoughtful technology and a human touch."
-      >
-        <div style={{ marginTop: 26 }}>
-          <Action href="/contact" variant="light">
-            Explore Physio@Home
-          </Action>
-        </div>
-      </DarkBanner>
     </>
   );
 }
