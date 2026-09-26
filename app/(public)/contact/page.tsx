@@ -72,7 +72,7 @@ export default function Contact() {
       </section>
 
       {/* Direct Lines */}
-      <section className="section" style={{ paddingTop: 12 }}>
+      <section className="section pt-16">
         <div className="site-container">
           <SectionHeading
             eyebrow="Direct lines"
@@ -96,10 +96,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Form & Location */}
-      <section
-        className="section"
-        style={{ background: "#f1f3f1" }}
-      >
+      <section className="section bg-[#f1f3f1]">
         <div className="site-container contact-layout">
           {/* Contact Form */}
           <div>
@@ -109,7 +106,7 @@ export default function Contact() {
               description="A few details help us bring the right people into the first conversation."
             />
 
-            <div style={{ marginTop: 28 }}>
+            <div className="mt-6">
               <ContactForm />
             </div>
           </div>
@@ -117,23 +114,14 @@ export default function Contact() {
           {/* Contact Information */}
           <div>
             {/* Location Card */}
-            <div className="map-card">
+            <div className="map-card relative">
               <MapPin
                 size={34}
                 strokeWidth={1.5}
-                style={{
-                  position: "absolute",
-                  top: "48%",
-                  left: "48%",
-                  color: "#ffffff",
-                  background: "#0f9488",
-                  borderRadius: "50%",
-                  padding: 7,
-                  boxSizing: "content-box",
-                }}
+                className="absolute top-[48%] left-[48%] text-white bg-[#0f9488] rounded-full p-1.75 box-content"
               />
 
-              <strong style={{ marginTop: 145 }}>
+              <strong className="mt-36 block">
                 Kathmandu, Nepal
               </strong>
 
@@ -141,32 +129,18 @@ export default function Contact() {
             </div>
 
             {/* FAQ Card */}
-            <div
-              className="dark-card"
-              style={{ marginTop: 18 }}
-            >
-              <span className="eyebrow">
-                Need quick answers?
-              </span>
+            <div className="dark-card mt-4">
+              <span className="eyebrow">Need quick answers?</span>
 
-              <h3
-                style={{
-                  marginTop: 14,
-                  color: "white",
-                }}
-              >
+              <h3 className="mt-4 text-white">
                 Visit our FAQ page{" "}
-                <span style={{ color: "#e0a930" }}>
-                  →
-                </span>
+                <span className="text-[#e0a930]">→</span>
               </h3>
             </div>
 
             {/* Response Times */}
-            <div style={{ marginTop: 24 }}>
-              <h3 style={{ fontSize: 16 }}>
-                Response times
-              </h3>
+            <div className="mt-6">
+              <h3 className="text-base">Response times</h3>
 
               <ul className="response-list">
                 <li>
