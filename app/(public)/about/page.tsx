@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, Briefcase, Compass, Handshake, Heart, Lightbulb, ShieldCheck, Sparkles, Star, Target, Users } from "lucide-react";
 import { Action, Hero, SectionHeading } from "@/components/site";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About us",
@@ -56,13 +57,34 @@ const trustItems = [
 ];
 
 const teamMembers = [
-  "Founder & CEO",
-  "Co-Founder & COO",
-  "Front-End Developer",
-  "Back-End Developer",
-  "Marketing Lead",
-  "Sales Executive",
-  "Business Development Officer",
+  {
+    role: "Founder & CEO",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
+  },
+  {
+    role: "Co-Founder & COO",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
+  },
+  {
+    role: "Front-End Developer",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
+  },
+  {
+    role: "Back-End Developer",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
+  },
+  {
+    role: "Marketing Lead",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
+  },
+  {
+    role: "Sales Executive",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
+  },
+  {
+    role: "Business Development Officer",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
+  },
 ];
 
 const roadmap = [
@@ -151,15 +173,33 @@ export default function AboutPage() {
       <section className="section">
         <div className="site-container">
           <SectionHeading eyebrow="Our team" title="The people making it happen." />
-          <div className="grid grid-2  md:grid-cols-4">
-            {teamMembers.map((role, index) => (
-              <article key={role} className="team-card">
-                <div className="team-avatar">{role.split(" ").slice(0, 2).map((segment) => segment[0]).join("")}</div>
-                <p>{role}</p>
-                <span>Team Member {index + 1}</span>
-              </article>
-            ))}
-          </div>
+          <section className="section">
+            <div className="site-container">
+              <SectionHeading
+                eyebrow="Our team"
+                title="The people making it happen."
+              />
+
+              <div className="grid grid-2 md:grid-cols-4">
+                {teamMembers.map((member, index) => (
+                  <article key={member.role} className="team-card">
+                    <div className="team-avatar">
+                      <Image
+                        src={member.image}
+                        alt={member.role}
+                        width={300}
+                        height={300}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+
+                    <p>{member.role}</p>
+                    <span>Team Member {index + 1}</span>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
       </section>
 
