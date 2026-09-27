@@ -30,8 +30,7 @@ export function Hero({
   return (
     <section className="hero-surface">
       <div
-        className="site-container section"
-        style={{ paddingTop: 84, paddingBottom: 48 }}
+        className="site-container section-hero"
       >
         <div className="reveal" style={{ maxWidth: 760 }}>
           <span className="eyebrow">{eyebrow}</span>

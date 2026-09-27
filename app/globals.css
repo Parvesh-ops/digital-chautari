@@ -50,6 +50,17 @@
 }
 
 :root {
+  --container-max-width: 1120px;
+  --page-gutter: 40px;
+  --page-gutter-mobile: 22px;
+  --section-space: 64px;
+  --section-space-tight: 48px;
+  --grid-gap: 20px;
+  --border-subtle: #e7e5df;
+  --radius-card: 12px;
+  --radius-chip: 10px;
+  --radius-button: 8px;
+  --shadow-card-hover: 0 16px 30px -18px rgba(16, 24, 38, .2);
   --background: #fbfbf9;
   --foreground: #101826;
   --card: #ffffff;
@@ -225,12 +236,23 @@
 
 @layer components {
   .site-container {
-    width: min(100% - 44px, 1120px);
+    width: 100%;
+    max-width: var(--container-max-width);
     margin-inline: auto;
+    padding-inline: var(--page-gutter);
   }
 
   .section {
-    padding-block: 64px;
+    padding-block: var(--section-space);
+  }
+
+  .section-tight {
+    padding-block: var(--section-space-tight);
+  }
+
+  .section-hero {
+    padding-top: 84px;
+    padding-bottom: var(--section-space-tight);
   }
 
   .hero-surface {
@@ -257,7 +279,7 @@
     align-items: center;
     gap: 8px;
     border: 1px solid #b9ded5;
-    border-radius: 999px;
+    border-radius: 20px;
     padding: 7px 12px;
     color: #0b6f66;
     background: #e7f5ea;
@@ -276,8 +298,8 @@
   }
 
   .card {
-    border: 1px solid #e7e5df;
-    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     background: white;
     padding: 22px;
     transition: transform .25s ease, box-shadow .25s ease;
@@ -285,7 +307,35 @@
 
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 30px -18px rgba(16, 24, 38, .2);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .stats-card,
+  .story-tile,
+  .mission-card,
+  .value-card,
+  .team-card,
+  .trust-card,
+  .product-panel,
+  .subservice,
+  .contact-details>div,
+  .map-card {
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .card:hover,
+  .stats-card:hover,
+  .story-tile:hover,
+  .mission-card:hover,
+  .value-card:hover,
+  .team-card:hover,
+  .trust-card:hover,
+  .product-panel:hover,
+  .subservice:hover,
+  .contact-details>div:hover,
+  .map-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .icon-chip {
@@ -293,12 +343,26 @@
     place-items: center;
     width: 42px;
     height: 42px;
-    border-radius: 10px;
+    border-radius: var(--radius-chip);
     font-size: 20px;
     transition: transform .25s ease;
   }
 
   .card:hover .icon-chip {
+    transform: scale(1.08);
+  }
+
+  .mission-icon,
+  .value-icon,
+  .trust-icon,
+  .stat-icon {
+    transition: transform .25s ease;
+  }
+
+  .mission-card:hover .mission-icon,
+  .value-card:hover .value-icon,
+  .trust-card:hover .trust-icon,
+  .stats-card:hover .stat-icon {
     transform: scale(1.08);
   }
 
@@ -309,7 +373,7 @@
 
   .dark-card {
     border: 1px solid #223140;
-    border-radius: 12px;
+    border-radius: var(--radius-card);
     background: #101d2b;
     padding: 22px;
   }
@@ -333,6 +397,34 @@
     animation: reveal .55s ease both;
   }
 
+  .page-transition {
+    animation: page-enter .45s ease both;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .45s ease, transform .45s ease;
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @keyframes page-enter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @keyframes reveal {
     from {
       opacity: 0;
@@ -353,6 +445,35 @@
       animation-duration: .01ms !important;
       transition-duration: .01ms !important;
       scroll-behavior: auto !important;
+    }
+
+    .page-transition,
+    .scroll-reveal,
+    .scroll-reveal.is-visible {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .card:hover,
+    .stats-card:hover,
+    .story-tile:hover,
+    .mission-card:hover,
+    .value-card:hover,
+    .team-card:hover,
+    .trust-card:hover,
+    .product-panel:hover,
+    .subservice:hover,
+    .contact-details>div:hover,
+    .map-card:hover,
+    .card:hover .icon-chip,
+    .mission-card:hover .mission-icon,
+    .value-card:hover .value-icon,
+    .trust-card:hover .trust-icon,
+    .stats-card:hover .stat-icon {
+      transform: none !important;
+      box-shadow: none !important;
     }
   }
 
@@ -436,8 +557,8 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border-radius: 8px;
-    padding: 11px 16px;
+    border-radius: var(--radius-button);
+    padding: 13px 24px;
     font-family: "Inter", sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -520,9 +641,14 @@
     grid-template-columns: repeat(3, 1fr);
     margin-top: 48px;
     background: white;
-    border: 1px solid #e7e5df;
-    border-radius: 12px;
-    box-shadow: 0 16px 35px -28px rgba(16, 24, 38, .28);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .stat {
@@ -564,21 +690,21 @@
   .grid-4 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: var(--grid-gap);
     margin-top: 32px;
   }
 
   .grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: var(--grid-gap);
     margin-top: 32px;
   }
 
   .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: var(--grid-gap);
     margin-top: 32px;
   }
 
@@ -763,8 +889,8 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    border-radius: 10px;
-    padding: 12px 18px;
+    border-radius: 8px;
+    padding: 13px 24px;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -812,19 +938,19 @@
   .story-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: var(--grid-gap);
     margin-top: 28px;
   }
 
   .story-tile {
-    border-radius: 18px;
+    border-radius: var(--radius-card);
     min-height: 164px;
     padding: 24px 22px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 12px;
-    border: 1px solid transparent;
+    border: 1px solid var(--border-subtle);
   }
 
   .story-tile span {
@@ -847,36 +973,32 @@
   .tile-teal {
     background: #dff4f2;
     color: #0b6f66;
-    border-color: #c5e5df;
   }
 
   .tile-navy {
     background: #0e1d2c;
     color: white;
-    border-color: #223140;
   }
 
   .tile-white {
     background: white;
     color: #101826;
-    border-color: #e7e5df;
   }
 
   .tile-gold {
     background: #f8e4b8;
     color: #5a4304;
-    border-color: #efce7d;
   }
 
   .mission-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: var(--grid-gap);
   }
 
   .mission-card {
-    border: 1px solid #e7e5df;
-    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     background: white;
     padding: 22px;
     transition: transform .25s ease, box-shadow .25s ease;
@@ -886,7 +1008,7 @@
   .value-card:hover,
   .team-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 30px -18px rgba(16, 24, 38, .2);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .mission-icon {
@@ -894,7 +1016,7 @@
     place-items: center;
     width: 48px;
     height: 48px;
-    border-radius: 12px;
+    border-radius: var(--radius-chip);
     background: #e7f5ea;
     color: #0f9488;
     margin-bottom: 18px;
@@ -920,8 +1042,8 @@
 
   .value-card {
     background: white;
-    border: 1px solid #e7e5df;
-    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     padding: 22px;
     transition: transform .25s ease, box-shadow .25s ease;
   }
@@ -965,7 +1087,7 @@
 
   .trust-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 30px -18px rgba(0, 0, 0, .45);
+    box-shadow: var(--shadow-card-hover);
   }
 
   .trust-icon {
@@ -992,8 +1114,8 @@
 
   .team-card {
     background: white;
-    border: 1px solid #e7e5df;
-    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     padding: 22px;
     text-align: center;
     transition: transform .25s ease, box-shadow .25s ease;
@@ -1060,7 +1182,7 @@
     justify-content: center;
     min-width: 84px;
     padding: 7px 12px;
-    border-radius: 999px;
+    border-radius: 20px;
     background: #e0a930;
     color: #0b1220;
     font-size: 11px;
@@ -1135,7 +1257,7 @@
   .product-tabs button {
     border: 1px solid #e7e5df;
     background: white;
-    border-radius: 999px;
+    border-radius: 20px;
     padding: 10px 14px;
     color: #5b6472;
     font: 600 12px "Inter", sans-serif;
@@ -1161,8 +1283,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 48px;
     align-items: center;
-    border: 1px solid #e7e5df;
-    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     padding: 40px;
     background: white;
   }
@@ -1187,7 +1309,7 @@
 
   .tag-list span {
     padding: 6px 9px;
-    border-radius: 999px;
+    border-radius: 20px;
     background: #f1f3f1;
     color: #5b6472;
     font-size: 11px;
@@ -1274,7 +1396,7 @@
     right: 18px;
     color: #0b6f66;
     background: #e0a930;
-    border-radius: 999px;
+    border-radius: 20px;
     padding: 5px 8px;
     font-size: 10px;
     font-weight: 700;
@@ -1317,13 +1439,13 @@
   .subservice-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: var(--grid-gap);
   }
 
   .subservice {
     padding: 18px;
-    border: 1px solid #e7e5df;
-    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     background: white;
   }
 
@@ -1348,8 +1470,8 @@
     flex-direction: column;
     gap: 7px;
     padding: 22px;
-    border: 1px solid #e7e5df;
-    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     background: white;
   }
 
@@ -1397,8 +1519,8 @@
   .contact-form input,
   .contact-form textarea {
     width: 100%;
-    border: 1px solid #e7e5df;
-    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-card);
     padding: 12px;
     background: white;
     color: #101826;
@@ -1427,7 +1549,7 @@
     border: 1px solid #e7e5df;
     background: white;
     padding: 8px 11px;
-    border-radius: 999px;
+    border-radius: 20px;
     font-size: 12px;
     cursor: pointer;
   }
@@ -1444,8 +1566,8 @@
     align-items: center;
     gap: 8px;
     border: 0;
-    border-radius: 8px;
-    padding: 12px 17px;
+    border-radius: var(--radius-button);
+    padding: 13px 24px;
     background: #0f9488;
     color: white;
     font: 600 13px "Inter", sans-serif;
@@ -1455,7 +1577,7 @@
   .map-card {
     min-height: 250px;
     padding: 24px;
-    border-radius: 12px;
+    border-radius: var(--radius-card);
     background: linear-gradient(135deg, #e7f2f4, #fdf1de);
     border: 1px solid #e7e5df;
     position: relative;
@@ -1615,7 +1737,7 @@
     z-index: 1;
     width: 70px;
     padding: 5px 8px;
-    border-radius: 999px;
+    border-radius: 20px;
     background: #e0a930;
     color: #0b1220;
     text-align: center;
@@ -1635,7 +1757,7 @@
 
   @media (max-width: 760px) {
     .site-container {
-      width: min(100% - 44px, 1120px);
+      padding-inline: var(--page-gutter-mobile);
     }
 
     .desktop-nav,
