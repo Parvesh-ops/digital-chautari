@@ -1,26 +1,24 @@
 import { AboutMissionVision } from '@/src/constants/About'
-import React from 'react'
-
-
-const missionVision = () => {
+const MissionVision = () => {
     return (
-        <>
-            <section className="section">
-                <div className="site-container">
-                    <div className="grid grid-2">
-                        {AboutMissionVision.map((item) => (
-                            <article key={item.title} className="mission-card">
-                                <div className="mission-icon">{item.icon}</div>
-                                <span className="eyebrow">{item.title}</span>
-                                <h3>{item.title}</h3>
-                                <p>{item.text}</p>
-                            </article>
-                        ))}
-                    </div>
+        <section className="section about-purpose-section">
+            <div className="site-container">
+                <div className="section-heading">
+                    <span className="eyebrow">What guides us</span>
+                    <h2>Purpose with a clear direction.</h2>
                 </div>
-            </section>
-        </>
+                <div className="grid grid-2">
+                    {AboutMissionVision.map((item) => (
+                        <article key={item.title} className="mission-card">
+                            <div className="mission-icon" aria-hidden="true">{item.icon}</div>
+                            <h3>{item.title}</h3>
+                            <p>{item.text}</p>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
     )
 }
 
-export default missionVision
+export default MissionVision

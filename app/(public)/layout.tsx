@@ -17,7 +17,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       return;
     }
 
-    const gridSelector = ".grid-4, .grid-3, .grid-2, .numbered, .story-grid, .mission-grid, .values-grid, .trust-grid, .team-grid, .subservice-grid, .contact-details";
+    const gridSelector = ".grid-4, .grid-3, .grid-2, .numbered, .story-grid, .mission-grid, .values-grid, .trust-grid, .team-grid, .timeline, .subservice-grid, .contact-details";
     const targets = document.querySelectorAll<HTMLElement>([
       "main .card",
       "main .dark-card",
@@ -25,6 +25,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       "main .mission-card",
       "main .value-card",
       "main .team-card",
+      "main .timeline-item",
       "main .subservice",
       "main .product-panel",
       "main .contact-details > *",

@@ -31,7 +31,6 @@ export const AboutTrustItems = [
 export const AboutRoadmap = [
   { year: "2025", title: "The Idea", label: "A vision to build a digital company rooted in local insight and global ambition." },
   { year: "2025", title: "First Products", label: "We launched our first products to bring value through digital storytelling and services." },
-  { year: "2026", title: "First Clients", label: "Trusted by brands and organizations to shape their digital presence and growth." },
-  { year: "2027", title: "Team Expansion", label: "Growing with talented people who bring passion and expertise to every project." },
-  { year: "Future", title: "Scaling Impact", label: "Continuing to build meaningful products and reliable digital partnerships that make a difference." },
+  { year: "2026", title: "Health-Tech Entry", label: "Bringing our product thinking into healthcare to make essential services more connected." },
+  { year: "2026", title: "Company Registration", label: "Formalizing our foundations as we grow our team, products, and partnerships." },
 ];

@@ -1,74 +1,33 @@
 import { SectionHeading } from '@/src/components/common/site'
-import Image from 'next/image'
-import React from 'react'
+import { Briefcase, Code2, Crown, Database, Megaphone, TrendingUp, Users } from 'lucide-react'
 
 const TeamMembers = () => {
 
     const teamMembers = [
-        {
-            role: "Founder & CEO",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
-        },
-        {
-            role: "Co-Founder & COO",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
-        },
-        {
-            role: "Front-End Developer",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
-        },
-        {
-            role: "Back-End Developer",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
-        },
-        {
-            role: "Marketing Lead",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
-        },
-        {
-            role: "Sales Executive",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
-        },
-        {
-            role: "Business Development Officer",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH6x2bfgOZPjTgmms2hlmyqFBRDO0wshoJdYfizxserw&s",
-        },
+        { role: "Founder & CEO", icon: Crown },
+        { role: "Co-Founder & COO", icon: Users },
+        { role: "Front-End Developer", icon: Code2 },
+        { role: "Back-End Developer", icon: Database },
+        { role: "Marketing Lead", icon: Megaphone },
+        { role: "Sales Executive", icon: Briefcase },
+        { role: "Business Development Officer", icon: TrendingUp },
     ];
     return (
-        <div>
-            <section className="section">
-                <div className="site-container">
-                    <SectionHeading eyebrow="Our team" title="The people making it happen." />
-                    <section className="section">
-                        <div className="site-container">
-                            <SectionHeading
-                                eyebrow="Our team"
-                                title="The people making it happen."
-                            />
-
-                            <div className="grid grid-2 md:grid-cols-4">
-                                {teamMembers.map((member, index) => (
-                                    <article key={member.role} className="team-card">
-                                        <div className="team-avatar">
-                                            <Image
-                                                src={member.image}
-                                                alt={member.role}
-                                                width={300}
-                                                height={300}
-                                                className="h-full w-full object-cover"
-                                            />
-                                        </div>
-
-                                        <p>{member.role}</p>
-                                        <span>Team Member {index + 1}</span>
-                                    </article>
-                                ))}
+        <section className="section">
+            <div className="site-container">
+                <SectionHeading eyebrow="Our team" title="The people making it happen." />
+                <div className="grid grid-2 md:grid-cols-4">
+                    {teamMembers.map(({ role, icon: Icon }) => (
+                        <article key={role} className="team-card">
+                            <div className="team-avatar" aria-hidden="true">
+                                <Icon size={24} strokeWidth={1.7} />
                             </div>
-                        </div>
-                    </section>
+                            <h3>{role}</h3>
+                        </article>
+                    ))}
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     )
 }
 

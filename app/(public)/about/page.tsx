@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowRight, Briefcase, Compass, Handshake, Heart, Lightbulb, ShieldCheck, Sparkles, Star, Target, Users } from "lucide-react";
-import { Action, Hero, SectionHeading } from "@/src/components/common/site";
-import Image from "next/image";
+import { Hero } from "@/src/components/common/site";
 import About from "@/src/components/app-pages/about/page";
 
 export const metadata: Metadata = {
