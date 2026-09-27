@@ -1,5 +1,6 @@
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   BriefcaseBusiness,
   Code2,
@@ -10,7 +11,6 @@ import {
 
 import {
   Hero,
-  IconCard,
   SectionHeading,
 } from "@/src/components/common/site";
 import ContactForm from "../../../src/components/app-pages/contact/components/ContactForm";
@@ -31,25 +31,25 @@ const directLines = [
   {
     icon: Megaphone,
     title: "Marketing",
-    text: "marketing@digitalchautari.com",
+    email: "marketing@digitalchautari.com",
     tone: "mint",
   },
   {
     icon: PenTool,
     title: "Content Studio",
-    text: "studio@digitalchautari.com",
+    email: "studio@digitalchautari.com",
     tone: "gold",
   },
   {
     icon: Code2,
     title: "Software Dev",
-    text: "tech@digitalchautari.com",
+    email: "tech@digitalchautari.com",
     tone: "teal",
   },
   {
     icon: BriefcaseBusiness,
     title: "Business Dev",
-    text: "partnerships@digitalchautari.com",
+    email: "partnerships@digitalchautari.com",
     tone: "lilac",
   },
 ] as const;
@@ -76,19 +76,23 @@ export default function Contact() {
         <div className="site-container">
           <SectionHeading
             eyebrow="Direct lines"
-            title="Reach the right team."
+            title="Reach the right team"
           />
 
           <div className="grid-4">
             {directLines.map(
-              ({ icon: Icon, title, text, tone }) => (
-                <IconCard
+              ({ icon: Icon, title, email, tone }) => (
+                <a
                   key={title}
-                  icon={<Icon size={21} />}
-                  title={title}
-                  text={text}
-                  tone={tone}
-                />
+                  href={`mailto:${email}`}
+                  className="card direct-line-card"
+                >
+                  <span className={`icon-chip chip-${tone}`}>
+                    <Icon size={21} />
+                  </span>
+                  <h3>{title}</h3>
+                  <p>{email}</p>
+                </a>
               ),
             )}
           </div>
@@ -129,14 +133,14 @@ export default function Contact() {
             </div>
 
             {/* FAQ Card */}
-            <div className="dark-card mt-4">
+            <Link href="/contact" className="dark-card mt-4 faq-callout">
               <span className="eyebrow">Need quick answers?</span>
 
               <h3 className="mt-4 text-white">
                 Visit our FAQ page{" "}
                 <span className="text-[#e0a930]">→</span>
               </h3>
-            </div>
+            </Link>
 
             {/* Response Times */}
             <div className="mt-6">
@@ -144,15 +148,15 @@ export default function Contact() {
 
               <ul className="response-list">
                 <li>
-                  Email <strong>Within 24 hours</strong>
+                  Email <strong>24h</strong>
                 </li>
 
                 <li>
-                  Proposals <strong>2-3 days</strong>
+                  Proposals <strong>2–3 days</strong>
                 </li>
 
                 <li>
-                  Urgent requests <strong>Same day</strong>
+                  Urgent <strong>Same day</strong>
                 </li>
               </ul>
             </div>

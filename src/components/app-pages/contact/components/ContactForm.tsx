@@ -144,6 +144,7 @@ export default function ContactForm() {
                 key={item}
                 type="button"
                 className={type === item ? "selected" : ""}
+                aria-pressed={type === item}
                 onClick={() => {
                   setType(item);
 
