@@ -93,7 +93,7 @@ export function Action({
   variant?: "primary" | "ghost" | "light";
 }) {
   return (
-    <Link href={href} className={`action action-${variant}`}>
+    <Link href={href} className={`action action-${variant} mt-3`}>
       {children}
       <ArrowRight size={16} />
     </Link>

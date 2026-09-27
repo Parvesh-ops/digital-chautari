@@ -144,6 +144,79 @@
     letter-spacing: -0.02em;
   }
 
+  h1 {
+    font-size: 32px;
+    font-weight: 800;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 46px;
+    }
+  }
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 17px;
+    }
+  }
+
+  p {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  @media (min-width: 768px) {
+    p {
+      font-size: 17px;
+    }
+  }
+
+  small,
+  caption {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  @media (min-width: 768px) {
+    small,
+    caption {
+      font-size: 13px;
+    }
+  }
+
+  button,
+  .button-label {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  @media (min-width: 768px) {
+    button,
+    .button-label {
+      font-size: 15px;
+    }
+  }
+
   ::selection {
     background: #e0a930;
     color: #101826;
@@ -178,7 +251,8 @@
     color: #dc2626;
   }
 
-  .eyebrow {
+  .eyebrow,
+  .tag-label {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -187,10 +261,18 @@
     padding: 7px 12px;
     color: #0b6f66;
     background: #e7f5ea;
-    font-size: 12px;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: .04em;
+    letter-spacing: 0.02em;
     text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    .eyebrow,
+    .tag-label {
+      font-size: 13px;
+    }
   }
 
   .card {
@@ -356,10 +438,18 @@
     gap: 8px;
     border-radius: 8px;
     padding: 11px 16px;
-    font-size: 13px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
     font-weight: 600;
     text-decoration: none;
     transition: transform .2s, background .2s;
+  }
+
+  @media (min-width: 768px) {
+    .nav-cta,
+    .action {
+      font-size: 15px;
+    }
   }
 
   .nav-cta,
