@@ -5,11 +5,11 @@ import React from 'react'
 const Benefits = () => {
   return (
     <>
-          {/* Why Digital Chautari */}
+          {/* Why work with us */}
           <DarkBanner
-            eyebrow="Why Digital Chautari"
-            title="A partner who stays in the room."
-            text="Good work needs trust, transparency, and the flexibility to respond to what we learn."
+            eyebrow="Why work with us"
+            title="We build better together"
+            text="We believe that the best solutions come from working together."
           >
             <div
               className="grid-3"
