@@ -1,6 +1,7 @@
+import { BlogPost, ProcessStep, Product, Sector, StatNumber, Testimonial } from "../types/types";
 
 
-export const sectors = [
+export const sectors: Sector[] = [
   "Healthcare",
   "E-Commerce",
   "Real Estate",
@@ -10,7 +11,7 @@ export const sectors = [
 ];
 
 
-export const products = [
+export const products:  Product[] = [
   {
     icon: "🌱",
     name: "Eco",
@@ -34,21 +35,21 @@ export const products = [
   },
 ];
 
-export const numbers = [
+export const numbers: StatNumber[] = [
   { value: "250+", label: "Projects delivered" },
   { value: "40+", label: "Happy clients" },
   { value: "1M+", label: "Content views" },
   { value: "98%", label: "Client retention" },
 ];
 
-export const processSteps = [
+export const processSteps: ProcessStep[] = [
   { number: "01", title: "Discover", text: "Find the signal in the noise." },
   { number: "02", title: "Design", text: "Shape a direction people can feel." },
   { number: "03", title: "Develop", text: "Build with care and momentum." },
   { number: "04", title: "Deliver", text: "Launch, learn, and keep improving." },
 ];
 
-export const testimonials = [
+export const testimonials: Testimonial[] = [
   {
     quote:
       "\u201CDigital Chautari brought clarity to a complex launch and made the whole process feel exciting.\u201D",
@@ -69,7 +70,7 @@ export const testimonials = [
   },
 ];
 
-export const blogPosts = [
+export const blogPosts: BlogPost[] = [
   {
     title: "Designing for trust",
     category: "Brand thinking",
