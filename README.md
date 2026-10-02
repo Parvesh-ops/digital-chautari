@@ -1,47 +1,84 @@
-# Digital Chautari
+# Digital Chautari 🌐
 
-Digital Chautari is a company website for a Kathmandu-based digital company. It presents the team, services, ventures, and contact information through a responsive set of public pages.
+**Digital Chautari** is a responsive company website for a Kathmandu-based digital solutions company. It showcases the company's story, services, products, team, and business capabilities through a modern, user-friendly interface.
 
-## Pages
+## ✨ Features
 
-- `/` - Homepage with company highlights, products, sectors, process, testimonials, and articles
-- `/about` - Company story, mission, values, team, and roadmap
-- `/services` - Services, capabilities, industries, benefits, and pricing
-- `/products` - Company ventures and products
-- `/contact` - Contact details and inquiry form
+* **Homepage** — Company highlights, featured products, industries served, workflow, testimonials, and articles.
+* **About Us** — Company story, mission, core values, team introduction, and roadmap.
+* **Services** — Overview of services, technical capabilities, industries, client benefits, and pricing.
+* **Products** — Showcase of company ventures, digital products, and initiatives.
+* **Contact** — Company contact information and an inquiry form.
+* **Responsive Design** — Optimized layouts for desktop, tablet, and mobile devices.
+* **Reusable Components** — Modular page sections and shared UI components for maintainability.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- Next.js 16 with the App Router
-- React 19 and TypeScript
-- Tailwind CSS 4
-- Lucide React and React Icons
+* **Framework:** Next.js 16 (App Router)
+* **Library:** React 19
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS 4
+* **Icons:** Lucide React and React Icons
 
-## Getting Started
+## 📄 Pages & Routes
 
-Install dependencies and start the development server:
+| Route       | Description                                           |
+| ----------- | ----------------------------------------------------- |
+| `/`         | Homepage with company highlights and featured content |
+| `/about`    | Company story, mission, values, team, and roadmap     |
+| `/services` | Services, capabilities, industries, and pricing       |
+| `/products` | Company ventures and digital products                 |
+| `/contact`  | Contact details and inquiry form                      |
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+* Node.js
+* npm
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <your-repository-url>
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd digital-chautari
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open http://localhost:3000 in your browser.
+
+## 📦 Available Scripts
+
+| Command         | Description                           |
+| --------------- | ------------------------------------- |
+| `npm run dev`   | Starts the development server         |
+| `npm run build` | Creates an optimized production build |
+| `npm run start` | Starts the production server          |
+| `npm run lint`  | Runs ESLint to check code quality     |
+
+To run the production version, build the project first:
 
 ```bash
-npm install
-npm run dev
+npm run build
+npm run start
 ```
-
-
-## Available Scripts
-
-```bash
-npm run dev    # Start the development server
-npm run build  # Create a production build
-npm run start  # Serve the production build
-npm run lint   # Run ESLint
-```
-
-Run `npm run build` before `npm run start`.
-
-## Project Structure
-
-- `app/` - App Router routes, shared layouts, and global styles
-- `src/components/app-pages/` - Page sections and page-specific components
-- `src/components/common/` - Shared site components
-- `src/constants/` and `src/data/` - Content constants and data
-
